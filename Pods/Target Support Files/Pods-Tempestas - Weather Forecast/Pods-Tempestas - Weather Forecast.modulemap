@@ -1,0 +1,6 @@
+framework module Pods_Tempestas___Weather_Forecast {
+  umbrella header "Pods-Tempestas - Weather Forecast-umbrella.h"
+
+  export *
+  module * { export * }
+}

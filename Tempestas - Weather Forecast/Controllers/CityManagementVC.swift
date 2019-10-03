@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CityManagementVC.swift
 //  Tempestas - Weather Forecast
 //
 //  Created by Nikolaos Rafail Nikolouzos on 3/10/19.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+/// This ViewController manages the user's saved cities and performs weather forecast searches
+class CityManagementVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

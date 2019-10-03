@@ -10,7 +10,7 @@
 		0E15F8622346390C00D44417 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0E15F8612346390C00D44417 /* .swiftlint.yml */; };
 		0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B97E2345E4D90077DC6E /* AppDelegate.swift */; };
 		0E56B9812345E4D90077DC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9802345E4D90077DC6E /* SceneDelegate.swift */; };
-		0E56B9832345E4D90077DC6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9822345E4D90077DC6E /* ViewController.swift */; };
+		0E56B9832345E4D90077DC6E /* CityManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9822345E4D90077DC6E /* CityManagementVC.swift */; };
 		0E56B9862345E4D90077DC6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9842345E4D90077DC6E /* Main.storyboard */; };
 		0E56B9882345E4DB0077DC6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9872345E4DB0077DC6E /* Assets.xcassets */; };
 		0E56B98B2345E4DB0077DC6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9892345E4DB0077DC6E /* LaunchScreen.storyboard */; };
@@ -23,7 +23,7 @@
 		0E56B97B2345E4D90077DC6E /* Tempestas - Weather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempestas - Weather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E56B97E2345E4D90077DC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E56B9802345E4D90077DC6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0E56B9822345E4D90077DC6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E56B9822345E4D90077DC6E /* CityManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManagementVC.swift; sourceTree = "<group>"; };
 		0E56B9852345E4D90077DC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E56B9872345E4DB0077DC6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E56B98A2345E4DB0077DC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,8 +63,18 @@
 		0E15F85F2346325A00D44417 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0E56B9822345E4D90077DC6E /* CityManagementVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0E15F8632346860D00D44417 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0E56B9892345E4DB0077DC6E /* LaunchScreen.storyboard */,
+				0E56B9842345E4D90077DC6E /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		0E56B9722345E4D90077DC6E = {
@@ -90,16 +100,14 @@
 		0E56B97D2345E4D90077DC6E /* Tempestas - Weather Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				0E56B9802345E4D90077DC6E /* SceneDelegate.swift */,
 				0E56B97E2345E4D90077DC6E /* AppDelegate.swift */,
 				0E56B98C2345E4DB0077DC6E /* Info.plist */,
 				0E56B9872345E4DB0077DC6E /* Assets.xcassets */,
 				0E15F85E2346325100D44417 /* Views */,
 				0E15F85D2346324900D44417 /* Models */,
 				0E15F85F2346325A00D44417 /* Controllers */,
-				0E56B9802345E4D90077DC6E /* SceneDelegate.swift */,
-				0E56B9822345E4D90077DC6E /* ViewController.swift */,
-				0E56B9842345E4D90077DC6E /* Main.storyboard */,
-				0E56B9892345E4DB0077DC6E /* LaunchScreen.storyboard */,
+				0E15F8632346860D00D44417 /* Storyboards */,
 			);
 			path = "Tempestas - Weather Forecast";
 			sourceTree = "<group>";
@@ -257,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E56B9832345E4D90077DC6E /* ViewController.swift in Sources */,
+				0E56B9832345E4D90077DC6E /* CityManagementVC.swift in Sources */,
 				0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */,
 				0E56B9812345E4D90077DC6E /* SceneDelegate.swift in Sources */,
 			);

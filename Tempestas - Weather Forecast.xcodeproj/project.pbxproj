@@ -13,6 +13,7 @@
 		0E56B9862345E4D90077DC6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9842345E4D90077DC6E /* Main.storyboard */; };
 		0E56B9882345E4DB0077DC6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9872345E4DB0077DC6E /* Assets.xcassets */; };
 		0E56B98B2345E4DB0077DC6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9892345E4DB0077DC6E /* LaunchScreen.storyboard */; };
+		0E56B9932345E82B0077DC6E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9922345E82B0077DC6E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0E56B9872345E4DB0077DC6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E56B98A2345E4DB0077DC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E56B98C2345E4DB0077DC6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E56B9922345E82B0077DC6E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		0E56B9722345E4D90077DC6E = {
 			isa = PBXGroup;
 			children = (
+				0E56B9922345E82B0077DC6E /* README.md */,
 				0E56B97D2345E4D90077DC6E /* Tempestas - Weather Forecast */,
 				0E56B97C2345E4D90077DC6E /* Products */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				0E56B98B2345E4DB0077DC6E /* LaunchScreen.storyboard in Resources */,
 				0E56B9882345E4DB0077DC6E /* Assets.xcassets in Resources */,
+				0E56B9932345E82B0077DC6E /* README.md in Resources */,
 				0E56B9862345E4D90077DC6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +295,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stoiximan.Tempestas---Weather-Forecast";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stoiximan.tempestas-weather-forecast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +313,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stoiximan.Tempestas---Weather-Forecast";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stoiximan.tempestas-weather-forecast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

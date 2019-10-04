@@ -38,7 +38,7 @@
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -70,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="36" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PZp-ev-94J">
-                                <rect key="frame" x="0.0" y="321" width="414" height="541"/>
+                                <rect key="frame" x="0.0" y="344.5" width="414" height="517.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -78,6 +78,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="55U-ly-X6Y"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To remove a city from the list swipe left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z9-CQ-ZKq">
+                                <rect key="frame" x="16" y="321" width="382" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajv-Wz-5ZN" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="354" y="225" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ajv-Wz-5ZN" secondAttribute="height" multiplier="1:1" id="RUB-lm-H82"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="star"/>
+                                <connections>
+                                    <action selector="onSaveButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpN-KF-o1g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -95,29 +113,70 @@
                             <constraint firstItem="PZp-ev-94J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sjg-Om-isu"/>
                             <constraint firstItem="p2T-bp-f0m" firstAttribute="trailing" secondItem="bop-sJ-Sks" secondAttribute="trailing" id="UbQ-1x-D1W"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="trailing" secondItem="C8d-KU-v2f" secondAttribute="trailing" id="UyK-jv-Ovw"/>
+                            <constraint firstItem="Ajv-Wz-5ZN" firstAttribute="bottom" secondItem="bop-sJ-Sks" secondAttribute="bottom" id="YZb-44-XAF"/>
+                            <constraint firstItem="Ajv-Wz-5ZN" firstAttribute="top" secondItem="bop-sJ-Sks" secondAttribute="top" id="ZAO-VF-egT"/>
+                            <constraint firstItem="4z9-CQ-ZKq" firstAttribute="leading" secondItem="p2T-bp-f0m" secondAttribute="leading" id="aQx-Hh-aCT"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="trailing" secondItem="C8d-KU-v2f" secondAttribute="trailing" id="anY-h0-71v"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="top" secondItem="C8d-KU-v2f" secondAttribute="bottom" constant="64" id="g7J-eL-cyA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PZp-ev-94J" secondAttribute="trailing" id="jJ9-M0-RBX"/>
+                            <constraint firstItem="Ajv-Wz-5ZN" firstAttribute="trailing" secondItem="bop-sJ-Sks" secondAttribute="trailing" constant="-4" id="l8h-nW-iPf"/>
+                            <constraint firstItem="4z9-CQ-ZKq" firstAttribute="trailing" secondItem="p2T-bp-f0m" secondAttribute="trailing" id="nM5-ci-1Aa"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="leading" secondItem="C8d-KU-v2f" secondAttribute="leading" constant="8" id="ndl-xY-aMe"/>
                             <constraint firstItem="C8d-KU-v2f" firstAttribute="trailing" secondItem="3RJ-cQ-L2L" secondAttribute="trailing" id="qpR-kC-3Kf"/>
                             <constraint firstItem="Be7-2Y-POa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sYC-E2-Zue"/>
+                            <constraint firstItem="4z9-CQ-ZKq" firstAttribute="top" secondItem="p2T-bp-f0m" secondAttribute="bottom" id="svy-k9-nkB"/>
                             <constraint firstItem="Be7-2Y-POa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uLS-fF-gLt"/>
-                            <constraint firstItem="PZp-ev-94J" firstAttribute="top" secondItem="p2T-bp-f0m" secondAttribute="bottom" id="upQ-00-X1d"/>
+                            <constraint firstItem="PZp-ev-94J" firstAttribute="top" secondItem="4z9-CQ-ZKq" secondAttribute="bottom" constant="4" id="vam-KE-Yla"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pIz-DJ-QdB"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="citySearchField" destination="bop-sJ-Sks" id="fBq-f3-ouM"/>
+                        <outlet property="savedCitiesDescription" destination="4z9-CQ-ZKq" id="QP9-ts-5vs"/>
                         <outlet property="savedCitiesTableView" destination="PZp-ev-94J" id="rFz-8t-2vh"/>
                         <outlet property="savedCitiesTitle" destination="p2T-bp-f0m" id="iLf-ko-1bp"/>
+                        <segue destination="pPL-Ql-yAS" kind="show" id="1Xc-Al-rvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="34.782608695652179" y="138.61607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KVi-SY-2JT">
+            <objects>
+                <viewController id="pPL-Ql-yAS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mKR-Pk-wWN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-fp-3k3">
+                                <rect key="frame" x="16" y="44" width="382" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1593470438" green="0.14298784950000001" blue="0.33408864269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <constraints>
+                            <constraint firstItem="B5v-fp-3k3" firstAttribute="top" secondItem="5uw-Vy-Puv" secondAttribute="top" id="1sG-eH-Aei"/>
+                            <constraint firstItem="B5v-fp-3k3" firstAttribute="leading" secondItem="5uw-Vy-Puv" secondAttribute="leading" constant="16" id="3ny-Nr-nJW"/>
+                            <constraint firstItem="5uw-Vy-Puv" firstAttribute="trailing" secondItem="B5v-fp-3k3" secondAttribute="trailing" constant="16" id="aiN-UO-2Gw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5uw-Vy-Puv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Iof-w1-2mT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAT-OO-y7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="139"/>
         </scene>
     </scenes>
     <resources>
         <image name="city-selection" width="560.5" height="441.5"/>
+        <image name="star" width="64" height="64"/>
     </resources>
 </document>

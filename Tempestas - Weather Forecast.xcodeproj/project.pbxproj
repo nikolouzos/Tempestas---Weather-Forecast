@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E15F8622346390C00D44417 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0E15F8612346390C00D44417 /* .swiftlint.yml */; };
+		0E15F868234686B900D44417 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E15F867234686B900D44417 /* City.swift */; };
 		0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B97E2345E4D90077DC6E /* AppDelegate.swift */; };
 		0E56B9812345E4D90077DC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9802345E4D90077DC6E /* SceneDelegate.swift */; };
 		0E56B9832345E4D90077DC6E /* CityManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9822345E4D90077DC6E /* CityManagementVC.swift */; };
@@ -15,11 +16,13 @@
 		0E56B9882345E4DB0077DC6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9872345E4DB0077DC6E /* Assets.xcassets */; };
 		0E56B98B2345E4DB0077DC6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9892345E4DB0077DC6E /* LaunchScreen.storyboard */; };
 		0E56B9932345E82B0077DC6E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E56B9922345E82B0077DC6E /* README.md */; };
+		0ECF8262234693AD0049501B /* Saveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF8261234693AD0049501B /* Saveable.swift */; };
 		ED150A0361CE38A933000548 /* Pods_Tempestas___Weather_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59727A3D49B65192C8F95BA /* Pods_Tempestas___Weather_Forecast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E15F8612346390C00D44417 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0E15F867234686B900D44417 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		0E56B97B2345E4D90077DC6E /* Tempestas - Weather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempestas - Weather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E56B97E2345E4D90077DC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E56B9802345E4D90077DC6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		0E56B98A2345E4DB0077DC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E56B98C2345E4DB0077DC6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E56B9922345E82B0077DC6E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0ECF8261234693AD0049501B /* Saveable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saveable.swift; sourceTree = "<group>"; };
 		3DF063EEA753C404C454C524 /* Pods-Tempestas - Weather Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tempestas - Weather Forecast.release.xcconfig"; path = "Target Support Files/Pods-Tempestas - Weather Forecast/Pods-Tempestas - Weather Forecast.release.xcconfig"; sourceTree = "<group>"; };
 		B59727A3D49B65192C8F95BA /* Pods_Tempestas___Weather_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Tempestas___Weather_Forecast.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F01BC5EFDB8BAAF60A7083 /* Pods-Tempestas - Weather Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tempestas - Weather Forecast.debug.xcconfig"; path = "Target Support Files/Pods-Tempestas - Weather Forecast/Pods-Tempestas - Weather Forecast.debug.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +53,9 @@
 		0E15F85D2346324900D44417 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0ECF8260234692F30049501B /* Protocols */,
+				0E15F866234686A800D44417 /* Utility */,
+				0E15F8652346869B00D44417 /* Data */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -56,6 +63,7 @@
 		0E15F85E2346325100D44417 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0ECF82632347908F0049501B /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -75,6 +83,21 @@
 				0E56B9842345E4D90077DC6E /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0E15F8652346869B00D44417 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0E15F867234686B900D44417 /* City.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0E15F866234686A800D44417 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		0E56B9722345E4D90077DC6E = {
@@ -110,6 +133,21 @@
 				0E15F8632346860D00D44417 /* Storyboards */,
 			);
 			path = "Tempestas - Weather Forecast";
+			sourceTree = "<group>";
+		};
+		0ECF8260234692F30049501B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF8261234693AD0049501B /* Saveable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0ECF82632347908F0049501B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		546BFEC91818D83AF2B76AEF /* Frameworks */ = {
@@ -266,7 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E56B9832345E4D90077DC6E /* CityManagementVC.swift in Sources */,
+				0ECF8262234693AD0049501B /* Saveable.swift in Sources */,
 				0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */,
+				0E15F868234686B900D44417 /* City.swift in Sources */,
 				0E56B9812345E4D90077DC6E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

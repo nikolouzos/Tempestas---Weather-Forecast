@@ -57,8 +57,10 @@ extension CityManagementVC: UITextFieldDelegate {
     
     /// Starts a request depending on the content of the textField & dismisses the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = textField.text, !text.isEmpty {
-            // TODO: Start a new request
+        // Make sure there's an input and format it correctly
+        if let city = textField.text?.replacingOccurrences(of: " ", with: "+"), !city.isEmpty {
+            // Start a new weather forecast request
+            Networking.shared.getWeatherForecast(forCity: city)
             
             // Reset the textField
             textField.text = ""

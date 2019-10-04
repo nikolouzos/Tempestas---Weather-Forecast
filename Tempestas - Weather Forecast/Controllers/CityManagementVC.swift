@@ -13,32 +13,60 @@ class CityManagementVC: UIViewController {
     
     @IBOutlet weak var citySearchField: CustomAnimatableTextField!
     
+    @IBOutlet weak var savedCitiesTitle: UILabel!
     @IBOutlet weak var savedCitiesTableView: UITableView!
-    var cities: Cities = []
+    
+    var citiesWrapper = CitiesWrapper(withKey: "savedCities")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Remove the tableview's footer
         savedCitiesTableView.tableFooterView = UIView()
+        
+        // Load the CityCell XIB
+        savedCitiesTableView.register(UINib(nibName: "CityCell", bundle: nil), forCellReuseIdentifier: "cityCell")
     }
 }
 
 // MARK: - TableView Delegate & Data Source implementation
 extension CityManagementVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return citiesWrapper.cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create the CityCell
         guard let cityCell = tableView.dequeueReusableCell(
-            withIdentifier: "cityCell") as? CityCell else { return UITableViewCell() }
+            withIdentifier: "cityCell", for: indexPath) as? CityCell else { return UITableViewCell() }
         
         // Customize the city cell
-        let currentCity = cities[indexPath.item]
+        let currentCity = citiesWrapper.cities[indexPath.item]
         cityCell.setupCell(forCity: currentCity)
         
         return cityCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+}
+
+// MARK: - TextField Delegate implementation
+extension CityManagementVC: UITextFieldDelegate {
+    
+    /// Starts a request depending on the content of the textField & dismisses the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text, !text.isEmpty {
+            // TODO: Start a new request
+            
+            // Reset the textField
+            textField.text = ""
+        }
+        
+        // Dismiss the keyboard
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

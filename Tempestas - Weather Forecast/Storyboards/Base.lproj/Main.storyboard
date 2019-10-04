@@ -49,6 +49,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="horizontalInsets">
                                         <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9Wr-hK-A8q"/>
@@ -66,9 +69,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PZp-ev-94J">
-                                <rect key="frame" x="16" y="329" width="382" height="533"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="36" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PZp-ev-94J">
+                                <rect key="frame" x="0.0" y="321" width="414" height="541"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="y9W-7G-6Xd"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="55U-ly-X6Y"/>
@@ -77,7 +81,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PZp-ev-94J" firstAttribute="leading" secondItem="p2T-bp-f0m" secondAttribute="leading" id="2k8-kB-0CG"/>
                             <constraint firstItem="3RJ-cQ-L2L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="5FW-IQ-uze"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="leading" secondItem="C8d-KU-v2f" secondAttribute="leading" id="5Pr-vs-Lql"/>
                             <constraint firstItem="C8d-KU-v2f" firstAttribute="leading" secondItem="3RJ-cQ-L2L" secondAttribute="leading" id="8C0-KY-dj1"/>
@@ -89,22 +92,24 @@
                             <constraint firstItem="p2T-bp-f0m" firstAttribute="leading" secondItem="bop-sJ-Sks" secondAttribute="leading" id="MrZ-YL-RfN"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="top" secondItem="b0W-hu-vJg" secondAttribute="bottom" constant="4" id="NJl-p6-uqM"/>
                             <constraint firstAttribute="bottom" secondItem="Be7-2Y-POa" secondAttribute="bottom" id="Qlg-9W-cNe"/>
+                            <constraint firstItem="PZp-ev-94J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sjg-Om-isu"/>
                             <constraint firstItem="p2T-bp-f0m" firstAttribute="trailing" secondItem="bop-sJ-Sks" secondAttribute="trailing" id="UbQ-1x-D1W"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="trailing" secondItem="C8d-KU-v2f" secondAttribute="trailing" id="UyK-jv-Ovw"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="trailing" secondItem="C8d-KU-v2f" secondAttribute="trailing" id="anY-h0-71v"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="top" secondItem="C8d-KU-v2f" secondAttribute="bottom" constant="64" id="g7J-eL-cyA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PZp-ev-94J" secondAttribute="trailing" id="jJ9-M0-RBX"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="leading" secondItem="C8d-KU-v2f" secondAttribute="leading" constant="8" id="ndl-xY-aMe"/>
                             <constraint firstItem="C8d-KU-v2f" firstAttribute="trailing" secondItem="3RJ-cQ-L2L" secondAttribute="trailing" id="qpR-kC-3Kf"/>
-                            <constraint firstItem="PZp-ev-94J" firstAttribute="trailing" secondItem="p2T-bp-f0m" secondAttribute="trailing" id="r3B-K0-M16"/>
                             <constraint firstItem="Be7-2Y-POa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sYC-E2-Zue"/>
                             <constraint firstItem="Be7-2Y-POa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uLS-fF-gLt"/>
-                            <constraint firstItem="PZp-ev-94J" firstAttribute="top" secondItem="p2T-bp-f0m" secondAttribute="bottom" constant="8" id="upQ-00-X1d"/>
+                            <constraint firstItem="PZp-ev-94J" firstAttribute="top" secondItem="p2T-bp-f0m" secondAttribute="bottom" id="upQ-00-X1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="citySearchField" destination="bop-sJ-Sks" id="fBq-f3-ouM"/>
                         <outlet property="savedCitiesTableView" destination="PZp-ev-94J" id="rFz-8t-2vh"/>
+                        <outlet property="savedCitiesTitle" destination="p2T-bp-f0m" id="iLf-ko-1bp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

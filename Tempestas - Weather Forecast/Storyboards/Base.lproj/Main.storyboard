@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempestas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RJ-cQ-L2L">
                                 <rect key="frame" x="16" y="76" width="382" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.15934704381760606" green="0.14298784949629884" blue="0.33408864270103633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Forecasting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8d-KU-v2f">
@@ -30,47 +30,82 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New York" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bop-sJ-Sks" customClass="AnimatableTextField" customModule="IBAnimatable">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New York" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bop-sJ-Sks" customClass="CustomAnimatableTextField" customModule="Tempestas___Weather_Forecast" customModuleProvider="target">
                                 <rect key="frame" x="16" y="225" width="382" height="40"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.1593470438" green="0.14298784950000001" blue="0.33408864269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Vrh-9Z-KgF"/>
                                 </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalInsets">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9Wr-hK-A8q"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type or select a city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0W-hu-vJg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type or select a city from the list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0W-hu-vJg">
                                 <rect key="frame" x="24" y="200" width="374" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2T-bp-f0m">
+                                <rect key="frame" x="16" y="297" width="382" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PZp-ev-94J">
+                                <rect key="frame" x="16" y="329" width="382" height="533"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="y9W-7G-6Xd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="55U-ly-X6Y"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="PZp-ev-94J" firstAttribute="leading" secondItem="p2T-bp-f0m" secondAttribute="leading" id="2k8-kB-0CG"/>
                             <constraint firstItem="3RJ-cQ-L2L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="5FW-IQ-uze"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="leading" secondItem="C8d-KU-v2f" secondAttribute="leading" id="5Pr-vs-Lql"/>
                             <constraint firstItem="C8d-KU-v2f" firstAttribute="leading" secondItem="3RJ-cQ-L2L" secondAttribute="leading" id="8C0-KY-dj1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3RJ-cQ-L2L" secondAttribute="trailing" constant="16" id="9Bz-r6-I2V"/>
                             <constraint firstItem="3RJ-cQ-L2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DkB-fh-Cwa"/>
                             <constraint firstItem="C8d-KU-v2f" firstAttribute="top" secondItem="3RJ-cQ-L2L" secondAttribute="bottom" id="EUS-Sk-J5h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PZp-ev-94J" secondAttribute="bottom" id="J51-qP-bQX"/>
+                            <constraint firstItem="p2T-bp-f0m" firstAttribute="top" secondItem="bop-sJ-Sks" secondAttribute="bottom" constant="32" id="Mho-gE-OBp"/>
+                            <constraint firstItem="p2T-bp-f0m" firstAttribute="leading" secondItem="bop-sJ-Sks" secondAttribute="leading" id="MrZ-YL-RfN"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="top" secondItem="b0W-hu-vJg" secondAttribute="bottom" constant="4" id="NJl-p6-uqM"/>
                             <constraint firstAttribute="bottom" secondItem="Be7-2Y-POa" secondAttribute="bottom" id="Qlg-9W-cNe"/>
+                            <constraint firstItem="p2T-bp-f0m" firstAttribute="trailing" secondItem="bop-sJ-Sks" secondAttribute="trailing" id="UbQ-1x-D1W"/>
                             <constraint firstItem="bop-sJ-Sks" firstAttribute="trailing" secondItem="C8d-KU-v2f" secondAttribute="trailing" id="UyK-jv-Ovw"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="trailing" secondItem="C8d-KU-v2f" secondAttribute="trailing" id="anY-h0-71v"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="top" secondItem="C8d-KU-v2f" secondAttribute="bottom" constant="64" id="g7J-eL-cyA"/>
                             <constraint firstItem="b0W-hu-vJg" firstAttribute="leading" secondItem="C8d-KU-v2f" secondAttribute="leading" constant="8" id="ndl-xY-aMe"/>
                             <constraint firstItem="C8d-KU-v2f" firstAttribute="trailing" secondItem="3RJ-cQ-L2L" secondAttribute="trailing" id="qpR-kC-3Kf"/>
+                            <constraint firstItem="PZp-ev-94J" firstAttribute="trailing" secondItem="p2T-bp-f0m" secondAttribute="trailing" id="r3B-K0-M16"/>
                             <constraint firstItem="Be7-2Y-POa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sYC-E2-Zue"/>
                             <constraint firstItem="Be7-2Y-POa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uLS-fF-gLt"/>
+                            <constraint firstItem="PZp-ev-94J" firstAttribute="top" secondItem="p2T-bp-f0m" secondAttribute="bottom" constant="8" id="upQ-00-X1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="citySearchField" destination="bop-sJ-Sks" id="fBq-f3-ouM"/>
+                        <outlet property="savedCitiesTableView" destination="PZp-ev-94J" id="rFz-8t-2vh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

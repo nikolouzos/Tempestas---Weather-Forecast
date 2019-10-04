@@ -9,7 +9,6 @@
 import UIKit
 
 class CityCell: UITableViewCell {
-    
     @IBOutlet weak var city: UILabel!
     
     /// Sets up the cell for the City provided

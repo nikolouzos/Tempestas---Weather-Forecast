@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E15F8622346390C00D44417 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0E15F8612346390C00D44417 /* .swiftlint.yml */; };
-		0E15F868234686B900D44417 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E15F867234686B900D44417 /* City.swift */; };
+		0E15F868234686B900D44417 /* CitiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E15F867234686B900D44417 /* CitiesWrapper.swift */; };
 		0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B97E2345E4D90077DC6E /* AppDelegate.swift */; };
 		0E56B9812345E4D90077DC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9802345E4D90077DC6E /* SceneDelegate.swift */; };
 		0E56B9832345E4D90077DC6E /* CityManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B9822345E4D90077DC6E /* CityManagementVC.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0E15F8612346390C00D44417 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		0E15F867234686B900D44417 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		0E15F867234686B900D44417 /* CitiesWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesWrapper.swift; sourceTree = "<group>"; };
 		0E56B97B2345E4D90077DC6E /* Tempestas - Weather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tempestas - Weather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E56B97E2345E4D90077DC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E56B9802345E4D90077DC6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		0E15F8652346869B00D44417 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				0E15F867234686B900D44417 /* City.swift */,
+				0E15F867234686B900D44417 /* CitiesWrapper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				0ECF8262234693AD0049501B /* Saveable.swift in Sources */,
 				0ECF8265234790F30049501B /* CustomAnimatableTextField.swift in Sources */,
 				0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */,
-				0E15F868234686B900D44417 /* City.swift in Sources */,
+				0E15F868234686B900D44417 /* CitiesWrapper.swift in Sources */,
 				0ECF82692347A6C70049501B /* CityCell.swift in Sources */,
 				0E56B9812345E4D90077DC6E /* SceneDelegate.swift in Sources */,
 			);

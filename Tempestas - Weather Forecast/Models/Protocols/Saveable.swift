@@ -11,20 +11,15 @@ import Foundation
 /// A protocol that adds the ability to save and remove an object from the UserDefaults
 protocol Saveable {
     
+    /// Savable key
+    var key: String { get set }
+    
     /// Saves the object to the UserDefaults
-    func save(withKey key: String)
+    func save()
+    
+    /// Loads the object from the UserDefaults
+    mutating func load()
     
     /// Removes the object from the UserDefaults
-    func remove(fromKey key: String)
-}
-
-// MARK: - Saveable Protocol implementation
-extension Saveable {
-    func save(withKey key: String) {
-        UserDefaults.standard.set(self, forKey: key)
-    }
-    
-    func remove(fromKey key: String) {
-        UserDefaults.standard.removeObject(forKey: key)
-    }
+    func delete()
 }

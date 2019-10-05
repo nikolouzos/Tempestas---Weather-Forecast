@@ -7,8 +7,31 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct WeatherForecast {
-    var city: City
-    var weatherDays: WeatherDays
+    var city: City?
+    var weatherDays: WeatherDays?
+    
+    var errorMessage: String?
+    
+    init(fromJSON json: JSON) {
+        
+        // Parse the city
+        if let city = json["request"]["query"].string {
+            self.city = city
+        }
+        
+        // Parse the weather forecast days
+        weatherDays = WeatherDays()
+        
+        if let weatherDaysJson = json["weather"].array {
+            for dayJSON in weatherDaysJson {
+                weatherDays?.append(WeatherDay(fromJSON: dayJSON))
+            }
+        }
+        
+        // Parse the error message (if any)
+        errorMessage = json["error"]["msg"].string
+    }
 }

@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 // MARK: - Networking Delegate
 protocol NetworkingDelegate: class {
-    func gotWeatherData()
+    func gotWeatherForecast(_ forecast: WeatherForecast?)
 }
 
 /// The class that handles the Networking for the application.
@@ -72,13 +73,13 @@ class Networking {
         AF.request(baseUrl, method: .get, parameters: params).response { response in
             debugPrint(response)
             
-            // Call the delegate
-            self.delegate?.gotWeatherData()
-            
-            if let data = response.data {
-                print(data)
-            } else {
+            if let data = response.data, let json = try? JSON(data: data) {
                 
+               // Parse the JSON
+                let forecast = WeatherForecast(fromJSON: json["data"])
+                
+                // Call the delegate
+                self.delegate?.gotWeatherForecast(forecast)
             }
         }
     }

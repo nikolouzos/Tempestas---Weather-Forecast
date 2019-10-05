@@ -17,26 +17,40 @@ protocol PopupDismissDelegate: class {
 class PopupVC: UIViewController {
 
     @IBOutlet weak var popupView: AnimatableView!
-    @IBOutlet weak var popupTitle: UILabel!
-    @IBOutlet weak var popupDescription: UILabel!
     
+    var popupTitle: String = ""
+    @IBOutlet weak var popupTitleLabel: UILabel!
+    
+    var popupDescription: String?
+    @IBOutlet weak var popupDescriptionLabel: UILabel!
+    
+    var dismissButtonText: String?
     @IBOutlet weak var dismissButton: AnimatableButton!
     
     weak var delegate: PopupDismissDelegate?
     
     func setupPopup(withTitle title: String = "", description: String,
                     dismissButtonText: String? = nil) {
-        // Set the texts
-        popupTitle.text = title
-        popupDescription.text = description
         
-        // Change the dismiss button text only if needed
-        guard dismissButtonText != nil else { return }
-        dismissButton.setTitle(dismissButtonText, for: .normal)
+        popupTitle = title
+        popupDescription = description
+        self.dismissButtonText = dismissButtonText
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set the texts
+        popupTitleLabel.text = popupTitle
+        popupDescriptionLabel.text = popupDescription
+        
+        // Change the dismiss button text only if needed
+        guard dismissButtonText != nil else { return }
+        dismissButton.setTitle(dismissButtonText, for: .normal)
     }
     
     // Dismisses the PopupVC

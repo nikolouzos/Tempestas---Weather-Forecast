@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IBAnimatable
 
 /// This ViewController manages the user's saved cities and performs weather forecast searches
 class CityManagementVC: UIViewController {
@@ -16,6 +17,10 @@ class CityManagementVC: UIViewController {
     @IBOutlet weak var savedCitiesTitle: UILabel!
     @IBOutlet weak var savedCitiesDescription: UILabel!
     @IBOutlet weak var savedCitiesTableView: UITableView!
+    
+    // The button is out by default
+    var buttonState: AnimationType.Way = .in
+    @IBOutlet weak var saveCityButton: AnimatableButton!
     
     var citiesWrapper = CitiesWrapper(withKey: "savedCities")
     
@@ -27,6 +32,12 @@ class CityManagementVC: UIViewController {
         
         // Load the CityCell XIB
         savedCitiesTableView.register(UINib(nibName: "CityCell", bundle: nil), forCellReuseIdentifier: "cityCell")
+        
+        // Make sure the saveCityButton is hidden
+        animateSaveCityButton(.out)
+        
+        // Detect the text changes on the citySearchField
+        citySearchField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,32 +45,6 @@ class CityManagementVC: UIViewController {
         
         // Toggle the saved cities texts
         toggleSavedCitiesTexts()
-    }
-    
-    /// Shows or hides the saved cities title and description
-    func toggleSavedCitiesTexts() {
-        savedCitiesTitle.isHidden = citiesWrapper.cities.isEmpty
-        savedCitiesDescription.isHidden = citiesWrapper.cities.isEmpty
-        
-        // Animate the changes
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    /// Requests the weather forecast from the API
-    func requestWeatherForecast() {
-        // Make sure there's an input and format it correctly
-        if let city = citySearchField.text?.replacingOccurrences(of: " ", with: "+"), !city.isEmpty {
-            // Start a new weather forecast request
-            Networking.shared.getWeatherForecast(forCity: city)
-            
-            // Reset the citySearchField
-            citySearchField.text = ""
-        }
-        
-        // Dismiss the keyboard
-        citySearchField.resignFirstResponder()
     }
     
     /// Saves the textField's input to the cities array, updates the tableView and clears the textField
@@ -85,6 +70,50 @@ class CityManagementVC: UIViewController {
         // Clear the textField and hide the keyboard
         citySearchField.text = ""
         citySearchField.resignFirstResponder()
+        
+        // Animate the saveCityButton out
+        animateSaveCityButton(.out)
+    }
+    
+    /// Shows or hides the saved cities title and description
+    func toggleSavedCitiesTexts() {
+        savedCitiesTitle.isHidden = citiesWrapper.cities.isEmpty
+        savedCitiesDescription.isHidden = citiesWrapper.cities.isEmpty
+        
+        // Animate the changes
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    /// Requests the weather forecast from the API
+    func requestWeatherForecast() {
+        // Make sure there's an input and format it correctly
+        if let city = citySearchField.text?.replacingOccurrences(of: " ", with: "+"), !city.isEmpty {
+            // Start a new weather forecast request
+            Networking.shared.getWeatherForecast(forCity: city)
+            
+            // Reset the citySearchField
+            citySearchField.text = ""
+            
+            // Animate the saveCityButton out
+            animateSaveCityButton(.out)
+        }
+        
+        // Dismiss the keyboard
+        citySearchField.resignFirstResponder()
+    }
+    
+    /// Animates the saveCityButton to slide in or out
+    func animateSaveCityButton(_ way: AnimationType.Way) {
+        // Make sure we are not repeating the animation
+        guard way != buttonState else { return }
+        
+        // Do the animation
+        saveCityButton.animate(.slideFade(way: way, direction: way == .in ? .left : .right), duration: 0.3)
+        
+        // Update the buttonState
+        buttonState = way
     }
 }
 
@@ -139,5 +168,12 @@ extension CityManagementVC: UITextFieldDelegate {
         requestWeatherForecast()
         
         return true
+    }
+    
+    /// Animates the saveCityButton in or out depending on the content of the citySearchField
+    @objc func textFieldDidChange(_ sender: UITextField) {
+        let way: AnimationType.Way = citySearchField.text != "" ? .in : .out
+        
+        animateSaveCityButton(way)
     }
 }

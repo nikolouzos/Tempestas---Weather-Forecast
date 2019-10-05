@@ -91,7 +91,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" image="star"/>
+                                <state key="normal" image="save-icon"/>
                                 <connections>
                                     <action selector="onSaveButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpN-KF-o1g"/>
                                 </connections>
@@ -134,6 +134,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="citySearchField" destination="bop-sJ-Sks" id="fBq-f3-ouM"/>
+                        <outlet property="saveCityButton" destination="Ajv-Wz-5ZN" id="O5Z-zS-CRT"/>
                         <outlet property="savedCitiesDescription" destination="4z9-CQ-ZKq" id="QP9-ts-5vs"/>
                         <outlet property="savedCitiesTableView" destination="PZp-ev-94J" id="rFz-8t-2vh"/>
                         <outlet property="savedCitiesTitle" destination="p2T-bp-f0m" id="iLf-ko-1bp"/>
@@ -177,6 +178,6 @@
     </scenes>
     <resources>
         <image name="city-selection" width="560.5" height="441.5"/>
-        <image name="star" width="64" height="64"/>
+        <image name="save-icon" width="64" height="64"/>
     </resources>
 </document>

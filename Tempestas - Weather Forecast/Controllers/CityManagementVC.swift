@@ -22,6 +22,8 @@ class CityManagementVC: UIViewController {
     var buttonState: AnimationType.Way = .in
     @IBOutlet weak var saveCityButton: AnimatableButton!
     
+    @IBOutlet weak var loader: AnimatableActivityIndicatorView!
+    
     var citiesWrapper = CitiesWrapper(withKey: "savedCities")
     
     override func viewDidLoad() {
@@ -90,6 +92,13 @@ class CityManagementVC: UIViewController {
     func requestWeatherForecast() {
         // Make sure there's an input and format it correctly
         if let city = citySearchField.text?.replacingOccurrences(of: " ", with: "+"), !city.isEmpty {
+            
+            // Show the loader
+            loader.startAnimating()
+            
+            // Add the Networking delegate
+            Networking.shared.delegate = self
+            
             // Start a new weather forecast request
             Networking.shared.getWeatherForecast(forCity: city)
             
@@ -175,5 +184,13 @@ extension CityManagementVC: UITextFieldDelegate {
         let way: AnimationType.Way = citySearchField.text != "" ? .in : .out
         
         animateSaveCityButton(way)
+    }
+}
+
+// MARK: - Networking Delegate implementation
+extension CityManagementVC: NetworkingDelegate {
+    func gotWeatherData() {
+        // Stop the loader
+        loader.stopAnimating()
     }
 }

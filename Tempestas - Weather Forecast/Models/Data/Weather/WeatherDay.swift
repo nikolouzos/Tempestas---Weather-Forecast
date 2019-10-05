@@ -7,10 +7,34 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 typealias WeatherDays = [WeatherDay]
 
 struct WeatherDay {
-    var date: Date
+    var date: Date?
     var hourlyWeather: [HourlyWeather]
+    
+    init(fromJSON json: JSON) {
+        // Parse the date string to create the Dates
+        if let dateString = json["date"].string {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-DD"
+            
+            // Create and assign the date
+            date = dateFormatter.date(from: dateString)
+        }
+        
+        // Clear the hourlyWeather array
+        hourlyWeather = []
+        
+        // Get the hourly weather array and create the containing objects
+        if let hourlyWeatherJsonArray = json["hourly"].array {
+            for hourlyWeatherJson in hourlyWeatherJsonArray {
+                
+                // Create and append the HourlyWeather
+                hourlyWeather.append(HourlyWeather(fromJSON: hourlyWeatherJson))
+            }
+        }
+    }
 }

@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable"
-OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CFNetwork" -framework "IBAnimatable"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable/IBAnimatable.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/IBAnimatable" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"
+OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CFNetwork" -framework "IBAnimatable" -framework "SwiftyJSON"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

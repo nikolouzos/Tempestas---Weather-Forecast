@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oMu-7r-NhU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PopupVC-->
+        <scene sceneID="BAM-eF-mOG">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="oMu-7r-NhU" customClass="PopupVC" customModule="Tempestas___Weather_Forecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1fS-qS-KoN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMP-0e-R4i" userLabel="PopupView" customClass="AnimatableView" customModule="IBAnimatable">
+                                <rect key="frame" x="41.5" y="311.5" width="331" height="273.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popup Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-AB-Fex">
+                                        <rect key="frame" x="16" y="20" width="299" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" red="0.1593470438" green="0.14298784950000001" blue="0.33408864269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O61-xZ-dAd">
+                                        <rect key="frame" x="16" y="52" width="299" height="152.5"/>
+                                        <string key="text">duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-a4-qgo" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="16" y="212.5" width="299" height="41"/>
+                                        <color key="backgroundColor" red="0.1593470438" green="0.14298784950000001" blue="0.33408864269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <inset key="contentEdgeInsets" minX="32" minY="10" maxX="32" maxY="10"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onDismissButtonTap:" destination="oMu-7r-NhU" eventType="touchUpInside" id="f4N-qj-CnN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="O61-xZ-dAd" firstAttribute="trailing" secondItem="Xvp-AB-Fex" secondAttribute="trailing" id="4ro-Gl-9Cy"/>
+                                    <constraint firstItem="VeW-a4-qgo" firstAttribute="leading" secondItem="O61-xZ-dAd" secondAttribute="leading" id="6VM-Na-qF7"/>
+                                    <constraint firstItem="Xvp-AB-Fex" firstAttribute="leading" secondItem="mMP-0e-R4i" secondAttribute="leading" constant="16" id="8z0-Wo-SPd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xvp-AB-Fex" secondAttribute="trailing" constant="16" id="HmV-dj-TRM"/>
+                                    <constraint firstItem="VeW-a4-qgo" firstAttribute="trailing" secondItem="O61-xZ-dAd" secondAttribute="trailing" id="M8m-e9-EpY"/>
+                                    <constraint firstItem="O61-xZ-dAd" firstAttribute="leading" secondItem="Xvp-AB-Fex" secondAttribute="leading" id="ayb-PX-kWT"/>
+                                    <constraint firstItem="VeW-a4-qgo" firstAttribute="top" secondItem="O61-xZ-dAd" secondAttribute="bottom" constant="8" id="idT-Ep-SWB"/>
+                                    <constraint firstAttribute="bottom" secondItem="VeW-a4-qgo" secondAttribute="bottom" constant="20" id="kin-DF-EKf"/>
+                                    <constraint firstItem="O61-xZ-dAd" firstAttribute="top" secondItem="Xvp-AB-Fex" secondAttribute="bottom" constant="8" id="o0Y-Xy-Vbn"/>
+                                    <constraint firstItem="Xvp-AB-Fex" firstAttribute="top" secondItem="mMP-0e-R4i" secondAttribute="top" constant="20" id="ung-cy-aPl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="mMP-0e-R4i" secondAttribute="height" multiplier="1:1" id="v5D-nf-09a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mMP-0e-R4i" firstAttribute="centerY" secondItem="1fS-qS-KoN" secondAttribute="centerY" id="mfc-Pd-GJR"/>
+                            <constraint firstItem="mMP-0e-R4i" firstAttribute="centerX" secondItem="1fS-qS-KoN" secondAttribute="centerX" id="oKU-QQ-gbu"/>
+                            <constraint firstItem="mMP-0e-R4i" firstAttribute="width" secondItem="KrY-5g-XGh" secondAttribute="width" multiplier="0.8" id="wJs-ev-seM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KrY-5g-XGh"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="VeW-a4-qgo" id="xMl-eE-BfU"/>
+                        <outlet property="popupDescription" destination="O61-xZ-dAd" id="7ef-jU-oFD"/>
+                        <outlet property="popupTitle" destination="Xvp-AB-Fex" id="gwa-rx-kk4"/>
+                        <outlet property="popupView" destination="mMP-0e-R4i" id="8xM-Qs-O5G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLf-92-ZTA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-91.304347826086968" y="143.97321428571428"/>
+        </scene>
+    </scenes>
+</document>

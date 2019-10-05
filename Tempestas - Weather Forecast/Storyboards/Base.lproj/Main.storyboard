@@ -155,7 +155,7 @@
                         <outlet property="savedCitiesDescription" destination="4z9-CQ-ZKq" id="QP9-ts-5vs"/>
                         <outlet property="savedCitiesTableView" destination="PZp-ev-94J" id="rFz-8t-2vh"/>
                         <outlet property="savedCitiesTitle" destination="p2T-bp-f0m" id="iLf-ko-1bp"/>
-                        <segue destination="pPL-Ql-yAS" kind="show" id="1Xc-Al-rvD"/>
+                        <segue destination="pPL-Ql-yAS" kind="show" identifier="forecastSegue" id="1Xc-Al-rvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -89,9 +89,10 @@ class CityManagementVC: UIViewController {
     }
     
     /// Requests the weather forecast from the API
-    func requestWeatherForecast() {
+    func requestWeatherForecast(forCity city: String?) {
+        
         // Make sure there's an input and format it correctly
-        if let city = citySearchField.text?.replacingOccurrences(of: " ", with: "+"), !city.isEmpty {
+        if let city = city?.replacingOccurrences(of: " ", with: "+"), !city.isEmpty {
             
             // Show the loader
             loader.startAnimating()
@@ -145,8 +146,9 @@ extension CityManagementVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Request the weather forecast
-        requestWeatherForecast()
+        // Request the weather forecast using the selected city
+        let selectedCity = citiesWrapper.cities[indexPath.item]
+        requestWeatherForecast(forCity: selectedCity)
     }
     
     /// Adds the Swipe to Delete functionality to the tableView
@@ -173,8 +175,8 @@ extension CityManagementVC: UITextFieldDelegate {
     
     /// Starts a request depending on the content of the textField & dismisses the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Request the weather forecast
-        requestWeatherForecast()
+        // Request the weather forecast passing the textField's input
+        requestWeatherForecast(forCity: textField.text)
         
         return true
     }
@@ -189,7 +191,7 @@ extension CityManagementVC: UITextFieldDelegate {
 
 // MARK: - Networking Delegate implementation
 extension CityManagementVC: NetworkingDelegate {
-    func gotWeatherData() {
+    func gotWeatherForecast(_ forecast: WeatherForecast?) {
         // Stop the loader
         loader.stopAnimating()
     }

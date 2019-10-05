@@ -9,12 +9,20 @@
 import Foundation
 import Alamofire
 
+// MARK: - Networking Delegate
+protocol NetworkingDelegate: class {
+    func gotWeatherData()
+}
+
 /// The class that handles the Networking for the application.
 /// You can find the API documentation at: https://www.worldweatheronline.com/developer/api/docs/local-city-town-weather-api.aspx
 class Networking {
     
     // Networking Singleton
     static let shared = Networking()
+    
+    // Delegate
+    weak var delegate: NetworkingDelegate?
     
     // MARK: - Constants
     private struct Constants {
@@ -63,6 +71,9 @@ class Networking {
         // Make the request
         AF.request(baseUrl, method: .get, parameters: params).response { response in
             debugPrint(response)
+            
+            // Call the delegate
+            self.delegate?.gotWeatherData()
             
             if let data = response.data {
                 print(data)

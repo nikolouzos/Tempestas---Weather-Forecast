@@ -19,10 +19,11 @@ struct WeatherDay {
         // Parse the date string to create the Dates
         if let dateString = json["date"].string {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-DD"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             
             // Create and assign the date
-            date = dateFormatter.date(from: dateString)
+            let thisDate = dateFormatter.date(from: dateString)
+            self.date = thisDate
         }
         
         // Clear the hourlyWeather array

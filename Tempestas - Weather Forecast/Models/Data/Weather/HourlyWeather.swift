@@ -17,7 +17,7 @@ struct HourlyWeather {
     
     init(fromJSON json: JSON) {
         // Parse the description
-        if let description = json["weatherDesc"]["value"].string {
+        if let description = json["weatherDesc", 0, "value"].string {
             self.description = description
         }
         

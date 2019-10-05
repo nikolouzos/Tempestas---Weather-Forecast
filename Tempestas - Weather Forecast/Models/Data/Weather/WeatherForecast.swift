@@ -18,7 +18,7 @@ struct WeatherForecast {
     init(fromJSON json: JSON) {
         
         // Parse the city
-        if let city = json["request"]["query"].string {
+        if let city = json["request", 0, "query"].string {
             self.city = city
         }
         

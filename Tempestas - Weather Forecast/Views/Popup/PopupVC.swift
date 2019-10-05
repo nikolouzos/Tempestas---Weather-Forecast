@@ -25,7 +25,7 @@ class PopupVC: UIViewController {
     weak var delegate: PopupDismissDelegate?
     
     func setupPopup(withTitle title: String = "", description: String,
-         dismissButtonText: String? = nil) {
+                    dismissButtonText: String? = nil) {
         // Set the texts
         popupTitle.text = title
         popupDescription.text = description

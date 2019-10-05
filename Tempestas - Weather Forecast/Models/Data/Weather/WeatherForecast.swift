@@ -32,6 +32,6 @@ struct WeatherForecast {
         }
         
         // Parse the error message (if any)
-        errorMessage = json["error"]["msg"].string
+        errorMessage = json["error", 0, "msg"].string
     }
 }

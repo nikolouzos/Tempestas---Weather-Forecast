@@ -12,19 +12,12 @@ import SwiftyJSON
 typealias WeatherDays = [WeatherDay]
 
 struct WeatherDay {
-    var date: Date?
+    var date: String?
     var hourlyWeather: [HourlyWeather]
     
     init(fromJSON json: JSON) {
-        // Parse the date string to create the Dates
-        if let dateString = json["date"].string {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            
-            // Create and assign the date
-            let thisDate = dateFormatter.date(from: dateString)
-            self.date = thisDate
-        }
+        // Parse the current date
+        date = json["date"].string
         
         // Clear the hourlyWeather array
         hourlyWeather = []

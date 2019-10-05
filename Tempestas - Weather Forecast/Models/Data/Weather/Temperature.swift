@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Temperature {
     // Hourly parameters
@@ -28,13 +29,13 @@ struct Temperature {
     }
     
     /// Hour initializer
-    init(fromHourDict dict: [String: Any]) {
+    init(fromJSON json: JSON) {
         // Parse the temperatures
-        normal[.celsius] = dict["tempC"] as? String
-        normal[.farenheit] = dict["tempF"] as? String
+        normal[.celsius] = json["tempC"].string
+        normal[.farenheit] = json["tempF"].string
         
         // Parse the feels like temperatures
-        feel[.celsius] = dict["FeelsLikeC"] as? String
-        feel[.farenheit] = dict["FeelsLikeF"] as? String
+        feel[.celsius] = json["FeelsLikeC"].string
+        feel[.farenheit] = json["FeelsLikeF"].string
     }
 }

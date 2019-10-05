@@ -156,20 +156,11 @@
                         <outlet property="savedCitiesTableView" destination="PZp-ev-94J" id="rFz-8t-2vh"/>
                         <outlet property="savedCitiesTitle" destination="p2T-bp-f0m" id="iLf-ko-1bp"/>
                         <segue destination="pPL-Ql-yAS" kind="show" id="1Xc-Al-rvD"/>
-                        <segue destination="ogD-52-8EC" kind="presentation" identifier="showPopup" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Ba1-f9-gAG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="138.61607142857142"/>
-        </scene>
-        <!--Popup-->
-        <scene sceneID="Wpo-Wv-y1a">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Popup" id="ogD-52-8EC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q8c-f2-Jga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="36" y="528"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KVi-SY-2JT">

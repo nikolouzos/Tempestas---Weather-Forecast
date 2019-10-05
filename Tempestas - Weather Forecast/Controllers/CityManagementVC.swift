@@ -194,5 +194,18 @@ extension CityManagementVC: NetworkingDelegate {
     func gotWeatherForecast(_ forecast: WeatherForecast?) {
         // Stop the loader
         loader.stopAnimating()
+        
+        if let errorMessage = forecast?.errorMessage,
+            let popupVC = UIStoryboard(name: "Popup", bundle: nil).instantiateInitialViewController() as? PopupVC {
+            
+            // Configure the popup
+            popupVC.setupPopup(withTitle: "ERROR", description: errorMessage)
+            
+            // Show the popup
+            present(popupVC, animated: true)
+        } else {
+            // Go the forecast VC
+            performSegue(withIdentifier: "forecastSegue", sender: nil)
+        }
     }
 }

@@ -9,6 +9,8 @@ target 'Tempestas - Weather Forecast' do
 
   # Pods for Tempestas - Weather Forecast
   pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'SwiftyJSON'
+  
   pod 'IBAnimatable'
   pod 'SwiftLint'
   

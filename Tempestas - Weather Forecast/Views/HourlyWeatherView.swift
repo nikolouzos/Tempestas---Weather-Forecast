@@ -24,7 +24,7 @@ class HourlyWeatherView: AnimatableView {
     }
     
     /// Setups the views
-    func setupViews(forTempScale scale: Temperature.Scale) {
+    func setupViews(forTempScale scale: Temperature.Scale, isSelected: Bool) {
         timeLabel.text = getTime()
         weatherImage.image = hourlyWeather?.weatherCode?.icon
         
@@ -32,6 +32,9 @@ class HourlyWeatherView: AnimatableView {
         if let temperature = hourlyWeather?.temperature.normal[scale] {
             temperatureLabel.text = "\(temperature ?? "") °\(scale.abbreviation)"
         }
+        
+        // Animate the view up or down
+        animate(.moveBy(x: 0, y: isSelected ? -16 : 16))
     }
     
     /// Formats the time in 12 hour system

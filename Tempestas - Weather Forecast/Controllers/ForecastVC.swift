@@ -147,7 +147,7 @@ extension ForecastVC {
                 hourlyView.addGestureRecognizer(tap)
                 
                 // Set up the hourWeatherView's subviews
-                hourlyView.setupViews(forTempScale: currentTemperatureScale)
+                hourlyView.setupViews(forTempScale: currentTemperatureScale, isSelected: index == selectedHourIndex)
             }
         }
     }

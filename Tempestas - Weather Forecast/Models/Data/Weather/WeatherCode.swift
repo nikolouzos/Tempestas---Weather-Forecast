@@ -6,7 +6,7 @@
 //  Copyright © 2019 Nikolaos Rafail Nikolouzos. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum WeatherCode {
     case sunny, cloudy, rainy, misty, snowy, none
@@ -42,6 +42,42 @@ enum WeatherCode {
             
         } else {
             return .none
+        }
+    }
+    
+    /// Gets the weather icon from the WeatherCode
+    var icon: UIImage? {
+        switch self {
+        case .sunny:
+            return #imageLiteral(resourceName: "sunny")
+        case .cloudy:
+            return #imageLiteral(resourceName: "cloudy")
+        case .rainy:
+            return #imageLiteral(resourceName: "rainy")
+        case .misty:
+            return #imageLiteral(resourceName: "foggy")
+        case .snowy:
+            return #imageLiteral(resourceName: "snowy")
+        default:
+            return nil
+        }
+    }
+    
+    /// Gets the weather icon from the WeatherCode
+    var background: UIImage? {
+        switch self {
+        case .sunny:
+            return #imageLiteral(resourceName: "sunny-bg")
+        case .cloudy:
+            return #imageLiteral(resourceName: "misty-bg")
+        case .rainy:
+            return #imageLiteral(resourceName: "rainy-bg")
+        case .misty:
+            return #imageLiteral(resourceName: "misty-bg")
+        case .snowy:
+            return #imageLiteral(resourceName: "snowy-bg")
+        default:
+            return nil
         }
     }
 }

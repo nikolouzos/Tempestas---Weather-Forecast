@@ -26,6 +26,10 @@ struct Temperature {
                 return "F"
             }
         }
+        
+        var otherScale: Scale {
+            return self == .celsius ? .farenheit : .celsius
+        }
     }
     
     /// Hour initializer

@@ -2,6 +2,8 @@
 
 ## Summary
 
+![](https://media.giphy.com/media/H4QT471CA99L82DJL4/giphy.gif)
+
 ### Tempestas - Meaning
 In ancient Roman religion, Tempestas (Latin tempestas: "season, weather; bad weather; storm, tempest") is a goddess of storms or sudden weather. As with certain other nature and weather deities, the plural form Tempestates is common. Cicero, in discussing whether natural phenomena such as rainbows and clouds should be regarded as divine, notes that the Tempestates had been consecrated as deities by the Roman people.
 

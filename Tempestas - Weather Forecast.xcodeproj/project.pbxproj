@@ -28,6 +28,9 @@
 		0ECF82782347DC090049501B /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF82772347DC090049501B /* HourlyWeather.swift */; };
 		0ECF827C234891F30049501B /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF827B234891F30049501B /* Popup.storyboard */; };
 		0ECF827E234892170049501B /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF827D234892170049501B /* PopupVC.swift */; };
+		0EDA64FD234A2F6700C374CB /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDA64FC234A2F6700C374CB /* HourlyWeatherView.swift */; };
+		0EDA64FF234A349400C374CB /* ForecastDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDA64FE234A349400C374CB /* ForecastDayCell.swift */; };
+		0EDA6501234A352300C374CB /* ForecastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDA6500234A352300C374CB /* ForecastVC.swift */; };
 		ED150A0361CE38A933000548 /* Pods_Tempestas___Weather_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59727A3D49B65192C8F95BA /* Pods_Tempestas___Weather_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		0ECF82772347DC090049501B /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
 		0ECF827B234891F30049501B /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		0ECF827D234892170049501B /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
+		0EDA64FC234A2F6700C374CB /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		0EDA64FE234A349400C374CB /* ForecastDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDayCell.swift; sourceTree = "<group>"; };
+		0EDA6500234A352300C374CB /* ForecastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastVC.swift; sourceTree = "<group>"; };
 		3DF063EEA753C404C454C524 /* Pods-Tempestas - Weather Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tempestas - Weather Forecast.release.xcconfig"; path = "Target Support Files/Pods-Tempestas - Weather Forecast/Pods-Tempestas - Weather Forecast.release.xcconfig"; sourceTree = "<group>"; };
 		B59727A3D49B65192C8F95BA /* Pods_Tempestas___Weather_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Tempestas___Weather_Forecast.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F01BC5EFDB8BAAF60A7083 /* Pods-Tempestas - Weather Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tempestas - Weather Forecast.debug.xcconfig"; path = "Target Support Files/Pods-Tempestas - Weather Forecast/Pods-Tempestas - Weather Forecast.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 				0ECF827A234891D20049501B /* Popup */,
 				0ECF82662347A68A0049501B /* CityCell */,
 				0ECF8264234790F30049501B /* CustomAnimatableTextField.swift */,
+				0EDA64FC234A2F6700C374CB /* HourlyWeatherView.swift */,
+				0EDA64FE234A349400C374CB /* ForecastDayCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0E56B9822345E4D90077DC6E /* CityManagementVC.swift */,
+				0EDA6500234A352300C374CB /* ForecastVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -356,8 +365,11 @@
 			files = (
 				0ECF826E2347D6A20049501B /* WeatherForecast.swift in Sources */,
 				0E05CFB92348A1D000CEA660 /* WeatherCode.swift in Sources */,
+				0EDA64FD234A2F6700C374CB /* HourlyWeatherView.swift in Sources */,
 				0E56B9832345E4D90077DC6E /* CityManagementVC.swift in Sources */,
 				0ECF8262234693AD0049501B /* Saveable.swift in Sources */,
+				0EDA64FF234A349400C374CB /* ForecastDayCell.swift in Sources */,
+				0EDA6501234A352300C374CB /* ForecastVC.swift in Sources */,
 				0ECF8265234790F30049501B /* CustomAnimatableTextField.swift in Sources */,
 				0ECF826C2347C77D0049501B /* Networking.swift in Sources */,
 				0E56B97F2345E4D90077DC6E /* AppDelegate.swift in Sources */,

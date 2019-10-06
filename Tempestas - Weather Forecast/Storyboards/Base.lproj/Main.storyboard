@@ -338,17 +338,230 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zao-eA-nxa">
                                 <rect key="frame" x="12" y="673" width="390" height="165"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" id="1AD-Pb-j8C" userLabel="HourlyView" customClass="HourlyWeatherView" customModule="Tempestas___Weather_Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAd-P2-Lyl">
+                                                <rect key="frame" x="26" y="16" width="36.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeB-Gd-fHt" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="14.5" y="52.5" width="60" height="60"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="z5b-bH-4mZ">
+                                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="z5b-bH-4mZ" secondAttribute="height" multiplier="1:1" id="0GC-SM-r7R"/>
+                                                            <constraint firstAttribute="width" constant="40" id="Wvw-J6-2SF"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.078431372550000003" green="0.070588235289999995" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="BAC-rm-05n"/>
+                                                    <constraint firstItem="z5b-bH-4mZ" firstAttribute="centerX" secondItem="LeB-Gd-fHt" secondAttribute="centerX" id="HlG-ru-SjM"/>
+                                                    <constraint firstAttribute="width" secondItem="LeB-Gd-fHt" secondAttribute="height" multiplier="1:1" id="Nst-tg-DMu"/>
+                                                    <constraint firstItem="z5b-bH-4mZ" firstAttribute="centerY" secondItem="LeB-Gd-fHt" secondAttribute="centerY" id="yrI-zl-lJo"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3n9-G4-GGE">
+                                                <rect key="frame" x="21.5" y="128.5" width="45.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1019607843" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="LeB-Gd-fHt" firstAttribute="centerX" secondItem="1AD-Pb-j8C" secondAttribute="centerX" id="7Pl-hG-x8z"/>
+                                            <constraint firstItem="LAd-P2-Lyl" firstAttribute="centerX" secondItem="1AD-Pb-j8C" secondAttribute="centerX" id="9dT-GC-b8I"/>
+                                            <constraint firstItem="LeB-Gd-fHt" firstAttribute="top" secondItem="LAd-P2-Lyl" secondAttribute="bottom" constant="16" id="EME-rX-hA7"/>
+                                            <constraint firstItem="LeB-Gd-fHt" firstAttribute="centerY" secondItem="1AD-Pb-j8C" secondAttribute="centerY" id="Tmm-PP-sn4"/>
+                                            <constraint firstAttribute="bottom" secondItem="3n9-G4-GGE" secondAttribute="bottom" constant="16" id="WY8-Qj-EKT"/>
+                                            <constraint firstItem="3n9-G4-GGE" firstAttribute="centerX" secondItem="1AD-Pb-j8C" secondAttribute="centerX" id="Xcp-H5-RdP"/>
+                                            <constraint firstItem="LAd-P2-Lyl" firstAttribute="top" secondItem="1AD-Pb-j8C" secondAttribute="top" constant="16" id="hES-io-act"/>
+                                            <constraint firstItem="3n9-G4-GGE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LeB-Gd-fHt" secondAttribute="bottom" constant="16" id="qxK-Op-1eM"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="pqx-yK-hhy"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="44"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="temperatureLabel" destination="3n9-G4-GGE" id="yh0-t4-WJo"/>
+                                            <outlet property="timeLabel" destination="LAd-P2-Lyl" id="mdn-LW-qNN"/>
+                                            <outlet property="weatherImage" destination="z5b-bH-4mZ" id="K4T-Ul-vJJ"/>
+                                            <outletCollection property="gestureRecognizers" destination="SSX-zW-ujf" appends="YES" id="3Xg-AV-OY6"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="RpL-N2-kGa" userLabel="HourlyView" customClass="HourlyWeatherView" customModule="Tempestas___Weather_Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="100.5" y="0.0" width="88.5" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKV-Kh-t8K">
+                                                <rect key="frame" x="26" y="16" width="36.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4r-3J-reZ" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="14.5" y="52.5" width="60" height="60"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="qgy-bz-zsq">
+                                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="qgy-bz-zsq" secondAttribute="height" multiplier="1:1" id="d19-aE-kMl"/>
+                                                            <constraint firstAttribute="width" constant="40" id="dUz-Sr-4xt"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.078431372550000003" green="0.070588235289999995" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="qgy-bz-zsq" firstAttribute="centerY" secondItem="X4r-3J-reZ" secondAttribute="centerY" id="AbH-66-CKc"/>
+                                                    <constraint firstItem="qgy-bz-zsq" firstAttribute="centerX" secondItem="X4r-3J-reZ" secondAttribute="centerX" id="QAo-lH-4Mf"/>
+                                                    <constraint firstAttribute="width" secondItem="X4r-3J-reZ" secondAttribute="height" multiplier="1:1" id="ZDj-2R-W1n"/>
+                                                    <constraint firstAttribute="width" constant="60" id="sAo-m7-CHT"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcP-OB-j42">
+                                                <rect key="frame" x="21.5" y="128.5" width="45.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1019607843" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="VKV-Kh-t8K" firstAttribute="centerX" secondItem="RpL-N2-kGa" secondAttribute="centerX" id="1Bq-f0-Eni"/>
+                                            <constraint firstItem="VKV-Kh-t8K" firstAttribute="top" secondItem="RpL-N2-kGa" secondAttribute="top" constant="16" id="8AE-od-p2Q"/>
+                                            <constraint firstItem="mcP-OB-j42" firstAttribute="centerX" secondItem="RpL-N2-kGa" secondAttribute="centerX" id="BdT-Gw-aRr"/>
+                                            <constraint firstAttribute="bottom" secondItem="mcP-OB-j42" secondAttribute="bottom" constant="16" id="GSE-8f-Kgd"/>
+                                            <constraint firstItem="X4r-3J-reZ" firstAttribute="top" secondItem="VKV-Kh-t8K" secondAttribute="bottom" constant="16" id="H4t-fm-8xN"/>
+                                            <constraint firstItem="mcP-OB-j42" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X4r-3J-reZ" secondAttribute="bottom" constant="16" id="h1C-bm-A7w"/>
+                                            <constraint firstItem="X4r-3J-reZ" firstAttribute="centerY" secondItem="RpL-N2-kGa" secondAttribute="centerY" id="iqo-dq-YQz"/>
+                                            <constraint firstItem="X4r-3J-reZ" firstAttribute="centerX" secondItem="RpL-N2-kGa" secondAttribute="centerX" id="v6n-hQ-4Sq"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="9yd-dj-j7V"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="44"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="temperatureLabel" destination="mcP-OB-j42" id="4fx-li-jXS"/>
+                                            <outlet property="timeLabel" destination="VKV-Kh-t8K" id="6wJ-kB-T1f"/>
+                                            <outlet property="weatherImage" destination="qgy-bz-zsq" id="1Se-Ma-8QM"/>
+                                            <outletCollection property="gestureRecognizers" destination="SSX-zW-ujf" appends="YES" id="GH3-eS-q3p"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="pUm-ib-7XW" userLabel="HourlyView" customClass="HourlyWeatherView" customModule="Tempestas___Weather_Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="201" y="0.0" width="88.5" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCZ-Rp-71A">
+                                                <rect key="frame" x="26" y="16" width="36.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-HE-1WH" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="14.5" y="52.5" width="60" height="60"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="1YH-7p-ucV">
+                                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="1YH-7p-ucV" secondAttribute="height" multiplier="1:1" id="YJx-r6-dxM"/>
+                                                            <constraint firstAttribute="width" constant="40" id="rXX-ae-VIQ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.078431372550000003" green="0.070588235289999995" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="1YH-7p-ucV" firstAttribute="centerX" secondItem="qZa-HE-1WH" secondAttribute="centerX" id="GMl-fd-4DB"/>
+                                                    <constraint firstAttribute="width" constant="60" id="HMY-TR-ryn"/>
+                                                    <constraint firstItem="1YH-7p-ucV" firstAttribute="centerY" secondItem="qZa-HE-1WH" secondAttribute="centerY" id="Hzg-Qg-L9o"/>
+                                                    <constraint firstAttribute="width" secondItem="qZa-HE-1WH" secondAttribute="height" multiplier="1:1" id="kcR-rJ-qUd"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSv-o5-fEZ">
+                                                <rect key="frame" x="21.5" y="128.5" width="45.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1019607843" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="tCZ-Rp-71A" firstAttribute="centerX" secondItem="pUm-ib-7XW" secondAttribute="centerX" id="13C-D3-Uny"/>
+                                            <constraint firstItem="PSv-o5-fEZ" firstAttribute="centerX" secondItem="pUm-ib-7XW" secondAttribute="centerX" id="1Xy-TR-4VA"/>
+                                            <constraint firstItem="qZa-HE-1WH" firstAttribute="centerX" secondItem="pUm-ib-7XW" secondAttribute="centerX" id="38v-oT-EeW"/>
+                                            <constraint firstItem="tCZ-Rp-71A" firstAttribute="top" secondItem="pUm-ib-7XW" secondAttribute="top" constant="16" id="5CR-sZ-mPW"/>
+                                            <constraint firstItem="qZa-HE-1WH" firstAttribute="top" secondItem="tCZ-Rp-71A" secondAttribute="bottom" constant="16" id="I56-PU-Zea"/>
+                                            <constraint firstItem="qZa-HE-1WH" firstAttribute="centerY" secondItem="pUm-ib-7XW" secondAttribute="centerY" id="aKJ-L2-Smj"/>
+                                            <constraint firstItem="PSv-o5-fEZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qZa-HE-1WH" secondAttribute="bottom" constant="16" id="e99-CE-U1R"/>
+                                            <constraint firstAttribute="bottom" secondItem="PSv-o5-fEZ" secondAttribute="bottom" constant="16" id="p7x-Xd-Qsm"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="Bhp-XZ-F9S"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="44"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="temperatureLabel" destination="PSv-o5-fEZ" id="nt9-0q-R8L"/>
+                                            <outlet property="timeLabel" destination="tCZ-Rp-71A" id="7Yj-88-Ls5"/>
+                                            <outlet property="weatherImage" destination="1YH-7p-ucV" id="GfX-91-rtV"/>
+                                            <outletCollection property="gestureRecognizers" destination="SSX-zW-ujf" appends="YES" id="aZN-sW-5MY"/>
+                                        </connections>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-Qd-AfM" userLabel="HourlyView" customClass="HourlyWeatherView" customModule="Tempestas___Weather_Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="165"/>
+                                        <rect key="frame" x="301.5" y="0.0" width="88.5" height="165"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji2-T6-LlG">
-                                                <rect key="frame" x="177" y="16" width="36.5" height="20.5"/>
+                                                <rect key="frame" x="26" y="16" width="36.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KpL-sm-YSb" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="165" y="52.5" width="60" height="60"/>
+                                                <rect key="frame" x="14.5" y="52.5" width="60" height="60"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="jV5-Jf-q6V">
                                                         <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -372,7 +585,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17h-u0-UX1">
-                                                <rect key="frame" x="172.5" y="128.5" width="45.5" height="20.5"/>
+                                                <rect key="frame" x="21.5" y="128.5" width="45.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -404,6 +617,7 @@
                                             <outlet property="temperatureLabel" destination="17h-u0-UX1" id="DZD-nd-glm"/>
                                             <outlet property="timeLabel" destination="Ji2-T6-LlG" id="6P3-Ab-8r9"/>
                                             <outlet property="weatherImage" destination="jV5-Jf-q6V" id="anx-mS-Wf7"/>
+                                            <outletCollection property="gestureRecognizers" destination="SSX-zW-ujf" appends="YES" id="hHa-Bo-6Hc"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -411,6 +625,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1593470438" green="0.14298784950000001" blue="0.33408864269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kjq-c5-wo9" firstAttribute="top" secondItem="g2k-K3-naL" secondAttribute="bottom" constant="16" id="0XX-Od-wDK"/>
                             <constraint firstItem="B5v-fp-3k3" firstAttribute="top" secondItem="5uw-Vy-Puv" secondAttribute="top" constant="8" id="1sG-eH-Aei"/>
@@ -453,6 +668,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAT-OO-y7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SSX-zW-ujf">
+                    <connections>
+                        <action selector="onHourlyViewTap:" destination="pPL-Ql-yAS" id="7ML-IR-Ykf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1076.8115942028987" y="138.61607142857142"/>
         </scene>

@@ -205,7 +205,12 @@ extension CityManagementVC: NetworkingDelegate {
             present(popupVC, animated: true)
         } else {
             // Go the forecast VC
-            performSegue(withIdentifier: "forecastSegue", sender: nil)
+            if let forecastVC = storyboard?.instantiateViewController(identifier: "forecastVC") as? ForecastVC {
+                forecastVC.forecast = forecast
+                
+                // Use the new iOS 13 presentation style to show the forecast
+                present(forecastVC, animated: true)
+            }
         }
     }
 }

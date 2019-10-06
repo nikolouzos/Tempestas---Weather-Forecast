@@ -115,20 +115,6 @@ class ForecastVC: UIViewController {
         // Update the hourlyViews
         setupHourlyViews()
     }
-    
-    /// Handles the taps on the hourlyViews
-    @objc func onHourlyViewTap(_ sender: UITapGestureRecognizer) {
-        guard let hourlyView = sender.view,
-            let index = hourlyWeatherStackView.arrangedSubviews.firstIndex(of: hourlyView) else { return }
-        
-        selectedHourIndex = index
-        
-        // Update the views
-        setupViews()
-        
-        // Update the hourlyViews
-        setupHourlyViews()
-    }
 }
 
 // MARK: - HourlyWeatherView Customization
@@ -150,5 +136,56 @@ extension ForecastVC {
                 hourlyView.setupViews(forTempScale: currentTemperatureScale, isSelected: index == selectedHourIndex)
             }
         }
+    }
+    
+    /// Handles the taps on the hourlyViews
+    @objc func onHourlyViewTap(_ sender: UITapGestureRecognizer) {
+        guard let hourlyView = sender.view,
+            let index = hourlyWeatherStackView.arrangedSubviews.firstIndex(of: hourlyView) else { return }
+        
+        selectedHourIndex = index
+        
+        // Update the views
+        setupViews()
+        
+        // Update the hourlyViews
+        setupHourlyViews()
+    }
+}
+
+// MARK: - Collection View Delegate & Data Source
+extension ForecastVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return forecast?.weatherDays?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Create the cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
+            "forecastDayCell", for: indexPath) as? ForecastDayCell else { return UICollectionViewCell() }
+        
+        // Get the day num
+        let cellDay = indexPath.item
+        
+        // Add the date to the cell
+        cell.setupCell(for: cellDay, isSelected: selectedDayIndex == cellDay)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Set the selectedDayIndex
+        selectedDayIndex = indexPath.item
+        
+        // Reset the selectedHourIndex
+        selectedHourIndex = 0
+        
+        // Update the layouts
+        setupViews()
+        setupHourlyViews()
+        
+        // Reload the collectionView cells
+        collectionView.reloadData()
     }
 }
